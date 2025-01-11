@@ -1,5 +1,6 @@
 
 const AutoFilter = () => {
+  // Exercise 3
   return (
     <div>
       <h1>Welcome to the AutoFilter</h1>

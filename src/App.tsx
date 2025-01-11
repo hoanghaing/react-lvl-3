@@ -9,9 +9,10 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<MainLayout />}>
+          <Route index element={<LocalStorage />} />
           <Route path='/auto-filter' element={<AutoFilter />} />
           <Route path='/generic-dialog' element={<GenericDialog />} />
-          <Route path='localstorage' element={<LocalStorage />} />
+          <Route path='/local-storage' element={<LocalStorage />} />
         </Route>
       </Routes>
     </Router>
