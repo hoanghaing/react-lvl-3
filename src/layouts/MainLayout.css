@@ -4,7 +4,19 @@
 }
 
 .header {
-  padding: 10px;
+  padding: 1px;
   background-color: #282c34;
   color: 'white';
+}
+
+.menu-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.menu-item {
+  padding: 0.5rem;
+}
+.menu-item:hover {
+  background: #7193d8;
 }
