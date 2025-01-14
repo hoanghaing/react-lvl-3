@@ -10,7 +10,10 @@ const GenericDialog = () => {
       <h1>Dialog Component Examples</h1>
 
       <button onClick={() => modalRef.current?.open()}>Open Modal</button>
+      <button onClick={() => modalRef.current?.close()}>Close Modal</button>
+
       <button onClick={() => dialogRef.current?.open()}>Open Regular Dialog</button>
+      <button onClick={() => dialogRef.current?.close()}>Close Regular Dialog</button>
 
 
       <Dialog ref={modalRef} isModal={true}>
