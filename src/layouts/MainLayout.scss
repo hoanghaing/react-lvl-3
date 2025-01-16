@@ -16,7 +16,8 @@
 
 .menu-item {
   padding: 0.5rem;
-}
-.menu-item:hover {
-  background: #7193d8;
+  &:hover {
+    background: #7193d8;
+
+  }
 }
