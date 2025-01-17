@@ -1,5 +1,5 @@
 import { useState, useImperativeHandle, forwardRef, ReactNode } from 'react';
-import './Dialog.css'; // Assuming you have a CSS file for styling
+import './Dialog.scss'; // Assuming you have a CSS file for styling
 
 type DialogProps = {
 	children: ReactNode;

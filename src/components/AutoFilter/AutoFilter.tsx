@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './AutoFilter.css';
+import './AutoFilter.scss';
 
 type AutoFilterDropdownProps<T> = {
   data: T[] & string[];
