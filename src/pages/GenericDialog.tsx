@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import Dialog from "./../components/Dialog/Dialog";
+import Dialog from "@/components/Dialog/Dialog";
 
 const GenericDialog = () => {
   const modalRef = useRef<{ open: () => void; close: () => void }>(null);

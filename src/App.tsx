@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MainLayout from './layouts/MainLayout'; // Adjust the import path as needed
-import AutoFilter from './pages/AutoFilter';
-import GenericDialog from './pages/GenericDialog';
-import LocalStorage from './pages/LocalStorage';
+import MainLayout from '@/layouts/MainLayout'; // Adjust the import path as needed
+import AutoFilter from '@/pages/AutoFilter';
+import GenericDialog from '@/pages/GenericDialog';
+import LocalStorage from '@/pages/LocalStorage';
 
 const App = () => {
   return (

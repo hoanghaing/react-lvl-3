@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import AutoFilterDropdown from '../components/AutoFilter/AutoFilter';
+import AutoFilterDropdown from '@/components/AutoFilter/AutoFilter';
 
 type User = {
   id: number;
