@@ -1,11 +1,7 @@
 import { useState, useEffect } from 'react';
 import './AutoFilter.scss';
+import { AutoFilterDropdownProps } from "@/types";
 
-type AutoFilterDropdownProps<T> = {
-  data: T[] & string[];
-  filterKey: keyof T & string;
-  valueChange: (item: T) => void;
-};
 
 const AutoFilterDropdown = <T,>({ data, filterKey, valueChange }: AutoFilterDropdownProps<T>) => {
   const [query, setQuery] = useState('');

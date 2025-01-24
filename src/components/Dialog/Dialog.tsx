@@ -1,10 +1,7 @@
-import { useState, useImperativeHandle, forwardRef, ReactNode } from 'react';
-import './Dialog.scss'; // Assuming you have a CSS file for styling
+import { useState, useImperativeHandle, forwardRef } from 'react';
+import './Dialog.scss';
+import { DialogProps } from "@/types";
 
-type DialogProps = {
-	children: ReactNode;
-	isModal?: boolean;
-};
 
 const Dialog = forwardRef(({ children, isModal }: DialogProps, ref) => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +12,6 @@ const Dialog = forwardRef(({ children, isModal }: DialogProps, ref) => {
 	}));
 
 	if (!isOpen) return null;
-	// Modal
 	if (isModal) {
 		return (
 			(
@@ -30,7 +26,6 @@ const Dialog = forwardRef(({ children, isModal }: DialogProps, ref) => {
 			)
 		)
 	}
-	// Regular Dialog
 	return (
 		(
 			<div className="dialog-content regular-dialog" onClick={() => setIsOpen(false)}>
