@@ -11,7 +11,12 @@ const AutoFilterDropdown = <T,>({ data, filterKey, valueChange }: AutoFilterDrop
   useEffect(() => {
     const lowerCaseQuery = query.toLowerCase();
     setFilteredData(
-      data.filter((item) => item[filterKey]?.toLowerCase().includes(lowerCaseQuery))
+      data.filter((item) => {
+        const value = item[filterKey];
+        if (typeof value === "string") {
+          value.toLowerCase().includes(lowerCaseQuery)
+        }
+      })
     );
   }, [query, data, filterKey]);
 
@@ -35,7 +40,7 @@ const AutoFilterDropdown = <T,>({ data, filterKey, valueChange }: AutoFilterDrop
         <ul className="dropdown-list">
           {filteredData.length > 0 ? (
             filteredData.map((item, index) => {
-              const label = item[filterKey] || '';
+              const label = item[filterKey] as string || '';
               const lowerCaseQuery = query.toLowerCase();
               const matchIndex = label.toLowerCase().indexOf(lowerCaseQuery);
               const beforeMatch = label.slice(0, matchIndex);

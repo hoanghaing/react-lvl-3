@@ -1,17 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import AutoFilterDropdown from '@/components/AutoFilter/AutoFilter';
-
-type User = {
-  id: number;
-  user: string;
-  username: string;
-  email: string;
-}
-
-type Country = {
-  name: string;
-}
+import { AutoFilterDropdownProps, User } from "@/types";
 
 const AutoFilter = () => {
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
@@ -23,15 +13,19 @@ const AutoFilter = () => {
       .then((data: User[]) => setUsers(data));
   }, []);
 
+  const dropdownProps: AutoFilterDropdownProps<User> = {
+    data: users,
+    filterKey: "name",
+    valueChange: (item) => setSelectedUser(item),
+  };
+
   return (
     <div>
       <h1>Auto Filter Dropdown Example</h1>
 
       <h2>Select a User</h2>
       <AutoFilterDropdown<User>
-        data={users}
-        filterKey="name"
-        valueChange={(item) => setSelectedUser(item)}
+        {...dropdownProps}
       />
       {selectedUser && <p>Selected User: {selectedUser.name}</p>}
     </div>
