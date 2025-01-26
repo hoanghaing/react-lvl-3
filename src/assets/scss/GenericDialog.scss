@@ -1,0 +1,10 @@
+.generic-dialog-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2rem 4rem; 
+  gap: 1rem;
+  button {
+    max-width: 10rem;
+  }
+}

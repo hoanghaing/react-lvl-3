@@ -1,11 +1,12 @@
 import { useRef } from 'react';
 import Dialog from "@/components/Dialog/Dialog";
+import "@/assets/scss/GenericDialog.scss";
 
 const GenericDialog = () => {
   const modalRef = useRef<{ open: () => void; close: () => void }>(null);
   const dialogRef = useRef<{ open: () => void; close: () => void }>(null);
   return (
-    <>
+    <div className='generic-dialog-wrapper'>
       <h1>Dialog Component Examples</h1>
 
       <button onClick={() => modalRef.current?.open()}>Open Modal</button>
@@ -30,7 +31,7 @@ const GenericDialog = () => {
           <button onClick={() => dialogRef.current?.close()}>Close</button>
         </div>
       </Dialog>
-    </>
+    </div>
   );
 };
 

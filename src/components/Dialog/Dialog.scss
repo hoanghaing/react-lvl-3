@@ -27,7 +27,9 @@
 }
 
 .regular-dialog {
-  position: relative;
+  position: fixed;
   margin: 20px auto;
   border: 1px solid #ccc;
+  left: 20rem;
+  top: 10rem;
 }
