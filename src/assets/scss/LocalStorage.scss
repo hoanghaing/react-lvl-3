@@ -1,0 +1,11 @@
+.local-storage-wrapper {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .main-content {
+    display: flex;
+    gap: 4rem;
+  }
+}

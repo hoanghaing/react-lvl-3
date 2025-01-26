@@ -9,13 +9,17 @@ const useLocalStorage = <T>(key: string, defaultValue: T | null = null) => {
       return defaultValue;
     }
   });
+
   const setValue = useCallback(
     (value: T) => {
+      console.log("setValue: ", value)
       try {
         const valueToStore = value instanceof Function ? value(storedValue) : value;
         setStoredValue(valueToStore);
         localStorage.setItem(key, JSON.stringify(valueToStore));
-        window.dispatchEvent(new Event('storage')); // Notify subscribers
+        window.dispatchEvent(new Event('storage'));
+        console.log("key: ", key)
+
       } catch (error) {
         console.error('Error writing to localStorage', error);
       }
@@ -41,7 +45,7 @@ const useLocalStorage = <T>(key: string, defaultValue: T | null = null) => {
     try {
       localStorage.removeItem(key);
       setStoredValue(null);
-      window.dispatchEvent(new Event('storage')); // Notify subscribers
+      window.dispatchEvent(new Event('storage'));
     } catch (error) {
       console.error('Error removing from localStorage', error);
     }
