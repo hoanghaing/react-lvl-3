@@ -20,7 +20,7 @@ const AutoFilter = () => {
   };
 
   return (
-    <div>
+    <>
       <h1>Auto Filter Dropdown Example</h1>
 
       <h2>Select a User</h2>
@@ -28,7 +28,7 @@ const AutoFilter = () => {
         {...dropdownProps}
       />
       {selectedUser && <p>Selected User: {selectedUser.name}</p>}
-    </div>
+    </>
   );
 };
 

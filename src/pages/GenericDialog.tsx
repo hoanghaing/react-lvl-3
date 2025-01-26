@@ -4,9 +4,8 @@ import Dialog from "@/components/Dialog/Dialog";
 const GenericDialog = () => {
   const modalRef = useRef<{ open: () => void; close: () => void }>(null);
   const dialogRef = useRef<{ open: () => void; close: () => void }>(null);
-  // Exercise 2
   return (
-    <div>
+    <>
       <h1>Dialog Component Examples</h1>
 
       <button onClick={() => modalRef.current?.open()}>Open Modal</button>
@@ -31,7 +30,7 @@ const GenericDialog = () => {
           <button onClick={() => dialogRef.current?.close()}>Close</button>
         </div>
       </Dialog>
-    </div>
+    </>
   );
 };
 
