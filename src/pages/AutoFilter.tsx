@@ -14,13 +14,11 @@ const AutoFilter = () => {
       .then((data: User[]) => setUsers(data));
   }, []);
 
-  console.log("users: ", users);
   const dropdownProps: AutoFilterDropdownProps<User> = {
     data: users,
     filterKey: "name",
     valueChange: (item) => setSelectedUser(item),
   };
-
   return (
     <div className='auto-filter-wrapper'>
       <h1>Auto Filter Dropdown Example</h1>

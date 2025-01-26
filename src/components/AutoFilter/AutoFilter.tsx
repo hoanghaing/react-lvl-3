@@ -15,9 +15,11 @@ const AutoFilterDropdown = <T,>({ data, filterKey, valueChange }: AutoFilterDrop
         const value = item[filterKey];
         if (typeof value === "string") {
           value.toLowerCase().includes(lowerCaseQuery)
+          return item;
         }
       })
     );
+
   }, [query, data, filterKey]);
 
   const handleSelect = (item: T) => {
@@ -25,7 +27,6 @@ const AutoFilterDropdown = <T,>({ data, filterKey, valueChange }: AutoFilterDrop
     setIsOpen(false);
     valueChange(item);
   };
-
   return (
     <div className="auto-filter-dropdown">
       <input
