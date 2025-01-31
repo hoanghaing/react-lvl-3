@@ -6,7 +6,7 @@ const MessagePublisher = () => {
   const [newKey, setNewKey] = useState(''); // State for the new key input
   const [keys, setKeys] = useState<string[]>([]); // State to manage list of keys
 
-  const { setValue, removeValue } = useLocalStorage<string>('', null); // Use hooks for local storage
+  const { setValue, removeValue } = useLocalStorage<string>(); // Use hooks for local storage
 
   const handleAddKey = () => {
     if (!newKey.trim()) {
@@ -23,7 +23,7 @@ const MessagePublisher = () => {
 
   const handleRemoveKey = (key: string) => {
     setKeys((prevKeys) => prevKeys.filter((item) => item !== key)); // Remove from the list
-    removeValue(); // Remove the value from local storage
+    removeValue(key); // Remove the value from local storage
   };
 
   const handleValueChange = (key: string, value: string) => {
@@ -35,7 +35,7 @@ const MessagePublisher = () => {
     <div className='message-publisher'>
       <h2>Write to local storage</h2>
       <section className='list-item'>
-        <h2>Manage Keys</h2>
+        <h2>List Keys</h2>
         <ul className="key-list">
           {keys.map((key) => (
             <li key={key} className="key-item">
