@@ -32,6 +32,9 @@
       .key-text {
         display: flex;
         margin-right: 1rem;
+        span {
+          margin: 0.2rem;
+        }
       }
     }
   }
@@ -46,6 +49,9 @@
   }
   .input-mode {
     .input-section {
+      height: 2rem;
+      justify-content: center;
+      align-items: center;
       display: flex;
       button {
         display: flex;
@@ -55,6 +61,8 @@
         align-items: center;
         margin: 0.25rem;
         border-radius: 8px;
+        font-size: unset;
+        padding: unset;
       }
     }
   }

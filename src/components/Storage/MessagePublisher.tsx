@@ -27,7 +27,7 @@ const MessagePublisher = () => {
   };
 
   const handleValueChange = (key: string, value: string) => {
-    setValue(value); // Update the local storage value
+    setValue(key, value); // Update the local storage value
   };
 
 
@@ -40,15 +40,15 @@ const MessagePublisher = () => {
           {keys.map((key) => (
             <li key={key} className="key-item">
               <div className="key-text">
-                <span>Keys: </span>
+                <span>Keys:</span>
                 <span>
-                  {key}
+                  {` ${key}`}
                 </span>
               </div>
               <input
                 type="text"
                 placeholder="Enter value"
-                onBlur={(e) => handleValueChange(key, e.target.value)} // Save on blur
+                onBlur={(e) => handleValueChange(key, e.target.value)}
               />
               <button onClick={() => handleRemoveKey(key)}>Remove</button>
             </li>
