@@ -3,10 +3,10 @@ import useLocalStorage from '@/hooks/useLocalStorage';
 import "./MessagePublisher.scss";
 
 const MessagePublisher = () => {
-  const [newKey, setNewKey] = useState(''); // State for the new key input
-  const [keys, setKeys] = useState<string[]>([]); // State to manage list of keys
+  const [newKey, setNewKey] = useState('');
+  const [keys, setKeys] = useState<string[]>([]);
 
-  const { setValue, removeValue } = useLocalStorage<string>(); // Use hooks for local storage
+  const { setValue, removeValue } = useLocalStorage();
 
   const handleAddKey = () => {
     if (!newKey.trim()) {
@@ -17,17 +17,17 @@ const MessagePublisher = () => {
       alert('Key already exists!');
       return;
     }
-    setKeys((prevKeys) => [...prevKeys, newKey]); // Add the key to the list
-    setNewKey(''); // Clear the input field
+    setKeys((prevKeys) => [...prevKeys, newKey]);
+    setNewKey('');
   };
 
   const handleRemoveKey = (key: string) => {
-    setKeys((prevKeys) => prevKeys.filter((item) => item !== key)); // Remove from the list
-    removeValue(key); // Remove the value from local storage
+    setKeys((prevKeys) => prevKeys.filter((item) => item !== key));
+    removeValue(key);
   };
 
   const handleValueChange = (key: string, value: string) => {
-    setValue(key, value); // Update the local storage value
+    setValue(key, value);
   };
 
 

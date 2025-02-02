@@ -2,7 +2,7 @@ import useLocalStorage from '@/hooks/useLocalStorage';
 import "./MessageSubscriber.scss";
 
 const MessageSubscriber = () => {
-  const { storedValues } = useLocalStorage<string>('message');
+  const { storedValues } = useLocalStorage();
 
   return (
     <div className="message-subscriber">

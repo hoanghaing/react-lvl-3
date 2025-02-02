@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-const useLocalStorage = <T>() => {
+const useLocalStorage = () => {
   const [storedValues, setStoredValues] = useState<Record<string, string>>(() => {
     try {
       return Object.keys(localStorage).reduce((acc, key) => {
@@ -16,7 +16,7 @@ const useLocalStorage = <T>() => {
     try {
       localStorage.setItem(key, JSON.stringify(value));
       setStoredValues((prev) => ({ ...prev, [key]: value }));
-      window.dispatchEvent(new Event('storage')); // Notify all subscribers
+      window.dispatchEvent(new Event('storage'));
     } catch (error) {
       console.error('Error writing to localStorage', error);
     }
