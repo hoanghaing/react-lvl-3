@@ -2,7 +2,7 @@
 # React: Simple App to deploy to show React lvl3 Certificate Exercises.
 
 Already deploy at:
-https://hoanghaing.github.io/react-lvl-3/local-storage
+https://hoanghaing.github.io/react-lvl-3/
 
 Technical stack
 - Vite.
