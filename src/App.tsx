@@ -6,7 +6,7 @@ import LocalStorage from '@/pages/LocalStorage';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename={'/react-lvl-3/'}>
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<LocalStorage />} />
