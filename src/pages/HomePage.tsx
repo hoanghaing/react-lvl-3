@@ -69,7 +69,10 @@ const HomePage = () => {
               No third-party component is allowed for the dropdown, just regular HTML/CSS/ React.
             </li>
             <li>
-              To illustrate its behavior, use your new auto-filter dropdown with two different data samples in a test component. You can use this free public API as one example: https://jsonplaceholder.typicode.com/users
+              To illustrate its behavior, use your new auto-filter dropdown with two different data samples in a test component. 
+              <br />
+              You can use this free public API as one example: 
+              <i>https://jsonplaceholder.typicode.com/users</i>
             </li>
           </ul>
         </li>
